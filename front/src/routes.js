@@ -28,12 +28,14 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 export default function Rotas() {
   return (
-    <Switch>
+    
     <BrowserRouter>
+      <Switch>
       <Route exact path="/" component={Autentica} />
       <Route path="/Cadastro" component={Cadastro} />
       <PrivateRoute path="/PaginaInicial" component={PaginaInicial} />
+      </Switch>
     </BrowserRouter>
-    </Switch>
+    
   );
 }
