@@ -2,31 +2,38 @@ const { Schema, model } = require("mongoose");
 
 const CommerceSchema = new Schema(
   {
-    name: {
+    nome: {
       type: String,
       required: true
     },
-    street_name: {
+    nome_rua: {
       type: String,
       required: true
     },
-    street_number: {
+    numero_rua: {
       type: Number,
       required: true
     },
-    neighborhood: {
+    bairro: {
       type: String,
       required: true
     },
-    city: {
+    cidade: {
       type: String,
       required: true
     },
-    state: {
+    estado: {
       type: String,
       required: true
-    }
+    },
+    usuarios: [
+      {
+      type: Schema.Types.ObjectId,
+      ref: "Usuario"
+      }
+  ]
   },
+  
   {
     timestamps: true
   }
